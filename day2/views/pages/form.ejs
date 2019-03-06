@@ -1,0 +1,29 @@
+
+<h2>welcome new user</h2>
+
+
+<% if(locals.data){%>
+    <form method="POST" action="/users/:<%= locals.data._id%>/edit">
+    <h1>edit:</h1>
+    <label>Name:</label> <br>
+    <input type="text" name="name" placeholder="<%= locals.data.name%>">
+    <br>
+    <label>Age:</label> <br>
+    <input type="text" name="age" placeholder="<%= locals.data.age%>">
+    <br>
+    <input type="submit">
+</form>
+<% }else{%>
+    <form method="POST" action="/users/">
+    <h1>new:</h1>
+    <label>Name:</label> <br>
+    <input type="text" name="name">
+    <br>
+    <label>Age:</label> <br>
+    <input type="text" name="age">
+    <br>
+    <input type="submit">
+
+    </form>
+<%}%>
+<% include ../layout/footer%>
